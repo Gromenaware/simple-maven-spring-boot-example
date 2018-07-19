@@ -1,24 +1,25 @@
 package com.itnove.hello.web;
 
-import org.junit.Test;
+
+import org.testng.annotations.Test;
 
 import java.util.Random;
 
 import static junit.framework.TestCase.assertTrue;
 
-public class HelloControllerTest {
+public class HelloUnitTest {
 
-    @Test
+    @Test(groups= "unit")
     public void test1() {
         assertTrue("Error, not true", true);
     }
 
-    @Test
+    @Test(groups= "unit")
     public void test2() {
         assertTrue("Error, not true", true);
     }
 
-    @Test
+    @Test(groups= "unit")
     public void test3() {
         Random ran = new Random();
         int x = ran.nextInt(4) + 2;

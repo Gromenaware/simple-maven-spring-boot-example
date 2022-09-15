@@ -2,9 +2,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.itnove</groupId>
-    <artifactId>hello</artifactId>
+    <artifactId>simple-maven-sprint-boot-example</artifactId>
     <packaging>war</packaging>
-    <version>18.11.13</version>
+    <version>22.09.15</version>
     <name>Hello Spring MVC</name>
     <url>http://maven.apache.org</url>
     <properties>
@@ -53,10 +53,9 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.3</version>
+                <version>3.8.0</version>
                 <configuration>
-                    <source>${jdk.version}</source>
-                    <target>${jdk.version}</target>
+                    <release>11</release>  <!--or <release>10</release>-->
                 </configuration>
             </plugin>
             <plugin>

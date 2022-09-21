@@ -1,21 +1,21 @@
 pipeline {
     agent any
     tools {
-        maven 'maven_325' 
-        jdk 'java_9'
+        maven 'maven_3_8_6' 
+        jdk 'java_docker'
     }
     stages {
-        stage('Checkout'){
+        stage('Checkout code'){
             steps {
-            git 'https://bitbucket.org/itnove/simple-maven-spring-boot-example.git'
+            git 'https://github.com/Gromenaware/simple-maven-spring-boot-example.git'
             }
         }
-        stage('Build') {
+        stage('Build Application') {
             steps {
                 sh 'mvn -B -DskipTests clean package'
             }
         }
-        stage('Unit Test') {
+        stage('Unit Test Execution') {
             steps {
                 sh 'mvn -Dgroups=unit test'
             }
@@ -25,7 +25,7 @@ pipeline {
                 }
             }
         }
-        stage('Integration Test') {
+        stage('Integration Test Execution') {
             steps {
                 sh 'mvn -Dgroups=integration test'
             }
@@ -35,12 +35,12 @@ pipeline {
                 }
             }
         }
-        stage('Deliver') {
+        stage('Deployment') {
             steps {
                 sh './jenkins/scripts/deliver.sh'
             }
         }
-        stage('Functional Test') {
+        stage('Functional Test Execution') {
             steps {
                 sh 'mvn -Dgroups=functional test'
             }

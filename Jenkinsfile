@@ -1,9 +1,6 @@
 pipeline {
     agent any
-    tools {
-        maven 'maven_3_8_6' 
-        jdk 'java_docker'
-    }
+
     stages {
         stage('Checkout code'){
             steps {

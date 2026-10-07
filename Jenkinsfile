@@ -1,10 +1,11 @@
 pipeline {
+    
     agent any
 
     stages {
         stage('Checkout code'){
             steps {
-            git 'https://github.com/Gromenaware/simple-maven-spring-boot-example.git'
+                git 'https://github.com/Gromenaware/simple-maven-spring-boot-example.git'
             }
         }
         stage('Build Application') {
@@ -18,9 +19,13 @@ pipeline {
             }
         }
     }
+    
     post {            
         always {
-                junit 'target/surefire-reports/*.xml'
+            junit 'target/surefire-reports/*.xml'
+        }
+        success {
+            archiveArtifacts artifacts: 'target/*.war', followSymlinks: false
         }
     }
 }

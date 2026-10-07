@@ -14,32 +14,7 @@ pipeline {
         }
         stage('Unit Test Execution') {
             steps {
-                sh 'mvn -Dgroups=unit test'
-            }
-            post {
-                always {
-                    junit 'target/surefire-reports/*.xml'
-                }
-            }
-        }
-        stage('Integration Test Execution') {
-            steps {
-                sh 'mvn -Dgroups=integration test'
-            }
-            post {
-                always {
-                    junit 'target/surefire-reports/*.xml'
-                }
-            }
-        }
-        stage('Deployment') {
-            steps {
-                sh './jenkins/scripts/deliver.sh'
-            }
-        }
-        stage('Functional Test Execution') {
-            steps {
-                sh 'mvn -Dgroups=functional test'
+                sh 'mvn test'
             }
             post {
                 always {

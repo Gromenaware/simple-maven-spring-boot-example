@@ -25,7 +25,7 @@ pipeline {
             junit 'target/surefire-reports/*.xml'
         }
         success {
-            archiveArtifacts artifacts: 'target/*.war', followSymlinks: false
+            archiveArtifacts artifacts: 'target/*.war', followSymlinks: false, fingerprint: true
         }
     }
 }

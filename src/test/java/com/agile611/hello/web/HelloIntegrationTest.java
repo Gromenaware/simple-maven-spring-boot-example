@@ -1,25 +1,24 @@
 package com.itnove.hello.web;
 
+import java.util.Random;
 
 import org.testng.annotations.Test;
-
-import java.util.Random;
 
 import static junit.framework.TestCase.assertTrue;
 
 public class HelloIntegrationTest {
 
-    @Test(groups= "integration")
+    @Test(groups = "integration")
     public void test1() {
         assertTrue("Error, not true", true);
     }
 
-    @Test(groups= "integration")
+    @Test(groups = "integration")
     public void test2() {
         assertTrue("Error, not true", true);
     }
 
-    @Test(groups= "integration")
+    @Test(groups = "integration")
     public void test3() {
         Random ran = new Random();
         int x = ran.nextInt(4) + 2;

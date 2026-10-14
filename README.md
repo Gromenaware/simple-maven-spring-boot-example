@@ -14,7 +14,7 @@
 `mvn jetty:run`
 
 ## Docker Run
-`docker run -d -p 9999:9999 itnove/simple-maven-spring-boot-example`
+`docker run -d -p 9999:9999 agile611/simple-maven-spring-boot-example`
 
 ## Hello World Web
 `http://0.0.0.0:9999/hello`

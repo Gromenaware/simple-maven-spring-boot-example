@@ -14,7 +14,7 @@ RUN MAVEN_VERSION=3.3.9 \
  && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
 ENV MAVEN_HOME /usr/share/maven
 
-RUN git clone https://guillemhs@bitbucket.org/itnove/simple-maven-spring-boot-example.git /root/simple-maven-spring-boot-example
+RUN git clone https://guillemhs@bitbucket.org/agile611/simple-maven-spring-boot-example.git /root/simple-maven-spring-boot-example
 
 RUN cd /root/simple-maven-spring-boot-example
 

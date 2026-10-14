@@ -1,4 +1,4 @@
-package com.itnove.hello.web;
+package com.agile611.hello.web;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

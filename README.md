@@ -112,13 +112,13 @@ src/test/java/       TestNG test classes
 docker/              Legacy Dockerfile
 target/              Maven build output (generated)
 ```
+## License and Support
 
-## Docker
+[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC_BY--NC_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/) Published by [Agile611](http://www.agile611.com/) under the **Creative Commons Attribution-NonCommercial 4.0 International** license.
 
-If the image is available in your Docker registry, run it with:
+README written by [Guillem Hernández Sola](https://www.linkedin.com/in/guillemhs/).
 
-```sh
-docker run --rm -p 9999:9999 agile611/simple-maven-spring-boot-example
-```
+## Contact
 
-The checked-in Dockerfile is legacy: it installs Java 8, while the Maven compiler configuration requires Java 11. Update the Dockerfile before using it to build an image from the current project.
+- 🌐 [agile611.com](http://www.agile611.com/)
+- 📍 Carrer Laureà Miró 309, 08950 Esplugues de Llobregat (Barcelona)

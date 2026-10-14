@@ -4,7 +4,7 @@
     <groupId>com.agile611</groupId>
     <artifactId>simple-maven-sprint-boot-example</artifactId>
     <packaging>war</packaging>
-    <version>26.10.16</version>
+    <version>octubre</version>
     <name>Hello Spring MVC</name>
     <url>http://maven.apache.org</url>
     <properties>

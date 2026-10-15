@@ -1,4 +1,4 @@
-# Spring MVC Hello World
+# Agile611 Spring MVC Hello World
 
 A small Java web application that demonstrates Spring MVC with XML configuration, JSP views, and Maven. The application is packaged as a WAR; it is not a Spring Boot application.
 

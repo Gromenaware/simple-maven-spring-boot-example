@@ -1,0 +1,50 @@
+pipeline {
+    agent none
+    
+    tools {
+        maven 'mvn3.10.0'
+    }
+
+    parameters {
+        choice(
+            name: 'AGENT_LABEL',
+            choices: ['alpine', 'debian-13', 'ubuntu-26-04'],
+            description: 'Selecciona la etiqueta del agente'
+        )
+    }
+
+    stages {
+        stage('Ejecución en Agente Seleccionado') {
+            agent {
+                node {
+                    label params.AGENT_LABEL
+                }
+            }
+            stages {
+                stage('Checkout SCM') {
+                    steps {
+                        echo 'Checkout del GIT'
+                        git branch: 'master', url: 'https://github.com/Gromenaware/simple-maven-spring-boot-example.git'
+                    }
+                }
+                
+                stage('Build Test Package') {
+                    steps {
+                        echo 'Construcción, test y empaquetado'
+                        sh 'mvn -B install'
+                    }
+                }
+            }
+            post {
+                always {
+                    echo 'Siempre guardo los tests'
+                    junit 'target/surefire-reports/*.xml'
+                }
+                success {
+                    echo 'Archivar WAR'
+                    archiveArtifacts artifacts: 'target/*.war', fingerprint: true, followSymlinks: false, onlyIfSuccessful: true
+                }
+            }
+        }
+    }
+}
